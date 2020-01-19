@@ -3936,7 +3936,7 @@
       "integrity": "sha1-Rqarfwrq2N6unsBWV4C31O/rnUM="
     },
     "on-core": {
-      "version": "git+https://github.com/yangxu-fit2cloud/on-core.git#67ddc8b20dd9cc7e2989471f3f30d61fadda7897",
+      "version": "git+https://github.com/yangxu-fit2cloud/on-core.git#63e80e4072c2f7ea2a4b27c659ad1bacb5b8eaa4",
       "requires": {
         "ajv": "4.11.8",
         "always-tail": "0.2.0",
@@ -4024,14 +4024,14 @@
       }
     },
     "on-tasks": {
-      "version": "git+https://github.com/yangxu-fit2cloud/on-tasks.git#20efa0f79588fcfde89e1de727bef092471f4602",
+      "version": "git+https://github.com/yangxu-fit2cloud/on-tasks.git#2a951f10d8005dc0cc966290aa7801051a206ea5",
       "requires": {
         "ajv": "4.11.8",
         "di": "git+https://github.com/yangxu-fit2cloud/di.js.git#1a15b61d89739a2b1d037a298d8ac0060b0a8e93",
         "dockerode": "2.5.4",
         "lodash": "3.10.1",
         "node-uuid": "1.4.8",
-        "on-core": "git+https://github.com/yangxu-fit2cloud/on-core.git#67ddc8b20dd9cc7e2989471f3f30d61fadda7897",
+        "on-core": "git+https://github.com/yangxu-fit2cloud/on-core.git#63e80e4072c2f7ea2a4b27c659ad1bacb5b8eaa4",
         "request": "2.83.0",
         "request-promise": "4.2.2",
         "requestretry": "1.13.0",

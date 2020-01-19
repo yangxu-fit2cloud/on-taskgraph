@@ -186,14 +186,19 @@ export PATH
      <% if (typeof n.nics !== 'undefined') { %>
       <%   for (var i = 0, len = n.nics.length; i < len; i++) { %>
         <% var device=n.nics[i]%>
-        echo DEVICE=<%=device%> > /etc/sysconfig/network-scripts/ifcfg-<%=device%>
-        echo NAME=<%=bondname%>-slave >> /etc/sysconfig/network-scripts/ifcfg-<%=device%>
-        echo MASTER=<%=bondname%> >> /etc/sysconfig/network-scripts/ifcfg-<%=device%>
-        echo TYPE=Ethernet >> /etc/sysconfig/network-scripts/ifcfg-<%=device%>
-        echo BOOTPROTO=none >> /etc/sysconfig/network-scripts/ifcfg-<%=device%>
-        echo ONBOOT=yes >> /etc/sysconfig/network-scripts/ifcfg-<%=device%>
-        echo NM_CONTROLLED=no >> /etc/sysconfig/network-scripts/ifcfg-<%=device%>
-        echo SLAVE=yes >> /etc/sysconfig/network-scripts/ifcfg-<%=device%>
+        interface1=<%=device%>
+        <%_ var macRegex = /(..:*){6}/i; _%>
+        <%_ if (device.search(macRegex) === 0){ _%>
+          interface1=`grep -i /sys/class/net/*/address -e  $interface1 | cut -d "/" -f 5`
+        <%_ } _%>
+        echo DEVICE=$interface1 > /etc/sysconfig/network-scripts/ifcfg-$interface1
+        echo NAME=<%=bondname%>-slave >> /etc/sysconfig/network-scripts/ifcfg-$interface1
+        echo MASTER=<%=bondname%> >> /etc/sysconfig/network-scripts/ifcfg-$interface1
+        echo TYPE=Ethernet >> /etc/sysconfig/network-scripts/ifcfg-$interface1
+        echo BOOTPROTO=none >> /etc/sysconfig/network-scripts/ifcfg-$interface1
+        echo ONBOOT=yes >> /etc/sysconfig/network-scripts/ifcfg-$interface1
+        echo NM_CONTROLLED=no >> /etc/sysconfig/network-scripts/ifcfg-$interface1
+        echo SLAVE=yes >> /etc/sysconfig/network-scripts/ifcfg-$interface1
       <%   } %>
       <% } %>
 
